@@ -1,5 +1,13 @@
-console.log('Funguju!')
+console.log('Funguju!');
 
-const karticky = document.querySelectorAll('.karticka')
+const karticky = document.querySelectorAll('.karticka');
 
-karticky[0].classList.remove('otocena')
+karticky.forEach((karticka) => {
+	const nastaveniCasovace = () => {
+		karticka.classList.add('otocena');
+	};
+	karticka.addEventListener('click', () => {
+		karticka.classList.toggle('otocena');
+		setTimeout(nastaveniCasovace, 3000);
+	});
+});
